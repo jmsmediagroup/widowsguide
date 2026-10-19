@@ -1,3 +1,53 @@
-User-agent: *
+User-agent: GPTBot
+Allow: /
 Disallow: /_source/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /_source/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /_source/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /_source/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /_source/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /_source/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /_source/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /_source/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /_source/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /_source/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /_source/
+
+User-agent: CCBot
+Allow: /
+Disallow: /_source/
+
+User-agent: *
+Allow: /
+Disallow: /_source/
+
 Sitemap: https://widowsguide.org/sitemap.xml

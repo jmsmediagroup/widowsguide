@@ -13,7 +13,11 @@ PAGES
   /books/            the eight books, with the "How long has it been?" picker
   /books/<title>/    one page per book: description, every chapter with its
                      short answer, buy (or "tell me when it's out"), next book
-  /questions/        all 96 chapter questions, each linking to its short answer
+  /questions/        all 96 chapter questions, each linking to its own page
+  /books/<title>/<question>/  one page per chapter question (96): short answer,
+                     what to do, what can wait, who can help; Article + FAQ data
+  /words/            glossary from the books (DefinedTermSet data)
+  /llms.txt          plain map of the site for AI search engines
   /start/            the free checklist (download, no sign-up needed)
   /first-30-days/    landing page for search ads: the checklist first, then Book 1
   /for-family/       which book to give, and what helps besides a book
@@ -84,3 +88,12 @@ PERFORMANCE
   fallback. _headers sets caching and basic security headers on Netlify.
   Lighthouse, mobile, 19 Oct 2026: 99 to 100 on performance, 100 on
   accessibility, best practices and SEO.
+
+SEARCH AND AI SEARCH (SEO / GEO)
+  - Every chapter question has its own page with the answer first, lists, a
+    visible breadcrumb and structured data (Article, FAQPage, BreadcrumbList).
+  - Book pages list the agencies the facts were checked against.
+  - robots.txt explicitly allows search and AI crawlers (GPTBot, ClaudeBot,
+    PerplexityBot, Google-Extended and others); llms.txt maps the site for them.
+  - After the domain is live: add it to Google Search Console and Bing Webmaster
+    Tools (Bing feeds ChatGPT search and Copilot) and submit /sitemap.xml in both.
