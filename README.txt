@@ -13,6 +13,7 @@ PAGES
   /books/            the eight books, with the "How long has it been?" picker
   /books/<title>/    one page per book: description, every chapter with its
                      short answer, buy (or "tell me when it's out"), next book
+  /questions/        all 96 chapter questions, each linking to its short answer
   /start/            the free checklist (download, no sign-up needed)
   /first-30-days/    landing page for search ads: the checklist first, then Book 1
   /for-family/       which book to give, and what helps besides a book
@@ -76,3 +77,10 @@ DESIGN NOTES
   Built for a reader in her sixties on a phone: 19 to 21px body text, 52 to
   64px buttons, high contrast, no pop-ups, nothing that moves. The checklist
   is free with no email required; sign-up is offered alongside, never as a gate.
+
+PERFORMANCE
+  Fonts are served from assets/fonts (no Google Fonts). The stylesheet is inlined
+  in every page by build_site.py. Covers are WebP in four sizes with a JPEG
+  fallback. _headers sets caching and basic security headers on Netlify.
+  Lighthouse, mobile, 19 Oct 2026: 99 to 100 on performance, 100 on
+  accessibility, best practices and SEO.
