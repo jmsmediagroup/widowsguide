@@ -49,6 +49,10 @@
     });
   });
 
+  // Arriving at a book page with #ch-N: open that chapter's answer.
+  var ch = location.hash.match(/^#ch-(\d+)$/);
+  if (ch) { var d = document.getElementById("ch-" + ch[1]); if (d) { d.open = true; d.scrollIntoView(); } }
+
   // Arriving at /books/#book-N: mark that book.
   var m = location.hash.match(/^#book-(\d)$/);
   if (m) { var c = document.getElementById("book-" + m[1]); if (c) c.classList.add("is-next"); }
