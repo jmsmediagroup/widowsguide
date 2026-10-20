@@ -1,6 +1,7 @@
 /* ================================================================
-   EDIT HERE when a book is published: paste its Amazon link into
-   `amazon` (for example "https://www.amazon.com/dp/B0XXXXXXXX").
+   EDIT HERE when a book is published: paste its Kindle page link into
+   `amazon` (for example "https://www.amazon.com/dp/B0XXXXXXXX"), and the
+   paperback and hardcover pages into `paperback` and `hardcover`.
    That one change does three things:
      - widowsguide.org/N (printed and QR-coded inside the books, and linked
        from every "Book N" mention in the Kindle editions) now goes
@@ -13,28 +14,28 @@
 const BOOKS = [
   { n: 1, word: "One", title: "The First 30 Days", url: "/books/the-first-30-days/",
     when: "The first month", line: "Who to call, what to find, what can wait.",
-    amazon: "" },
+    amazon: "https://www.amazon.com/dp/B0HNL713Z5", paperback: "https://www.amazon.com/dp/B0HNM44NR7", hardcover: "https://www.amazon.com/dp/B0HNM4BR3C" },
   { n: 2, word: "Two", title: "The Money", url: "/books/the-money/",
     when: "Months 1 to 6", line: "Survivor benefits, accounts, insurance.",
-    amazon: "" },
+    amazon: "https://www.amazon.com/dp/B0HNL711Z8", paperback: "https://www.amazon.com/dp/B0HNM1MNTC", hardcover: "https://www.amazon.com/dp/B0HNMRSTSC" },
   { n: 3, word: "Three", title: "The House and the Things", url: "/books/the-house-and-the-things/",
     when: "Months 3 to 12", line: "Stay or sell, and clearing a life.",
-    amazon: "" },
+    amazon: "", paperback: "", hardcover: "" },
   { n: 4, word: "Four", title: "Everything They Handled", url: "/books/everything-they-handled/",
     when: "Months 1 to 9", line: "The practical jobs that are now yours.",
-    amazon: "" },
+    amazon: "", paperback: "", hardcover: "" },
   { n: 5, word: "Five", title: "The First Year", url: "/books/the-first-year/",
     when: "Months 6 to 15", line: "Anniversaries, holidays, the hardest months.",
-    amazon: "" },
+    amazon: "", paperback: "", hardcover: "" },
   { n: 6, word: "Six", title: "The People Around You", url: "/books/the-people-around-you/",
     when: "Months 3 to 18", line: "Family, friends, and who disappears.",
-    amazon: "" },
+    amazon: "", paperback: "", hardcover: "" },
   { n: 7, word: "Seven", title: "Year Two", url: "/books/year-two/",
     when: "Months 15 to 24", line: "Rebuilding a life that is yours.",
-    amazon: "" },
+    amazon: "", paperback: "", hardcover: "" },
   { n: 8, word: "Eight", title: "Someone New", url: "/books/someone-new/",
     when: "Month 18 and after", line: "Companionship after loss, and what people may say.",
-    amazon: "" },
+    amazon: "", paperback: "", hardcover: "" },
 ];
 
 /* "How long has it been?": the first book is "start here". */

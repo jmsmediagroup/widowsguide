@@ -8,6 +8,13 @@
     if (window.WG_ADS && label) gtag("event", "conversion", { send_to: window.WG_ADS + "/" + label });
   }
 
+  function formats(b) {
+    var f = [["Kindle", b.amazon], ["Paperback", b.paperback], ["Hardcover", b.hardcover]].filter(function (x) { return x[1]; });
+    if (f.length < 2) return '<p class="fine">Kindle, paperback and hardcover.</p>';
+    return '<p class="fine formats">Also as: ' + f.map(function (x) {
+      return '<a href="' + x[1] + '" rel="noopener" data-track="amazon">' + x[0] + '</a>'; }).join(' · ') + '</p>';
+  }
+
   // Buy buttons: Amazon when the link is in books.js, otherwise "tell me".
   document.querySelectorAll("[data-buy]").forEach(function (el) {
     var b = books[+el.dataset.buy - 1]; if (!b) return;
@@ -15,7 +22,7 @@
     var title = b.title.replace(/&/g, "&amp;").replace(/</g, "&lt;");
     if (b.amazon) {
       el.innerHTML = '<a class="btn' + big + '" href="' + b.amazon + '" rel="noopener" data-track="amazon">Buy ' +
-        title + ' on Amazon</a><p class="fine">Kindle, paperback and hardcover.</p>';
+        title + ' on Amazon</a>' + formats(b);
     } else {
       el.innerHTML = '<a class="btn' + big + '" href="#notify">Tell me when it’s out</a>' +
         '<p class="fine">' + title + ' is not out yet. Leave your email below for a note when it is.</p>';
