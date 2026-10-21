@@ -130,3 +130,13 @@ SEARCH AND AI SEARCH (SEO / GEO)
     PerplexityBot, Google-Extended and others); llms.txt maps the site for them.
   - After the domain is live: add it to Google Search Console and Bing Webmaster
     Tools (Bing feeds ChatGPT search and Copilot) and submit /sitemap.xml in both.
+    Google is verified by a DNS TXT record; Bing by BingSiteAuth.xml, which
+    build_site.py writes from BING_VERIFY.
+  - IndexNow: after every deploy, run
+        python3 09_site/indexnow.py
+    It tells Bing, Yandex, Seznam and Naver which pages changed, instead of
+    waiting for them to crawl. Google does not take part. Pass paths to send
+    only some (python3 09_site/indexnow.py /start/ /1/), or --check to test the
+    key alone. The key lives in build_site.py as INDEXNOW_KEY and is published
+    at /<key>.txt. Run it after the deploy is live, never before: the engines
+    fetch each URL, so a page that is not up yet is a wasted submission.
