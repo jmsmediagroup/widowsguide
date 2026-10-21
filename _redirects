@@ -3,3 +3,5 @@
 /lp     /first-30-days/   301
 /_source/*   /404.html   404!
 /README.txt   /404.html   404!
+/netlify/*   /404.html   404!
+/netlify.toml   /404.html   404!

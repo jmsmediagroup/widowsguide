@@ -24,8 +24,17 @@
 <body>
 <a class="skip" href="#main">Skip to the main text</a>
 <div class="topbar"><div class="wrap topbar-in"><a class="brand" href="/">The Widow’s Guide</a><nav aria-label="Main"><ul><li><a href="/books/">The books</a></li><li><a href="/start/">Free checklist</a></li><li><a href="/for-family/">For family and friends</a></li><li><a href="/about/">About</a></li></ul></nav></div></div>
-<header class="band"><div class="wrap"><p class="series">The Widow’s Guide</p><h1>Thank you</h1><p class="lede">You’re on the list. The emails are few and short, and every one has a link to unsubscribe.</p></div></header>
+<header class="band"><div class="wrap"><p class="series">The Widow’s Guide</p><h1>Thank you</h1></div></header>
 <main id="main" class="wrap">
+<section id="signup-ok">
+  <p class="lede">You’re on the list. The emails are few and short, and every one has a link to unsubscribe.</p>
+</section>
+<section id="signup-failed" hidden>
+  <div class="panel">
+    <p class="lede">Something went wrong at our end, and your address wasn’t saved.</p>
+    <p>Write to <a href="mailto:hello@widowsguide.org">hello@widowsguide.org</a> and we will add you by hand. There is nothing else you need to do.</p>
+  </div>
+</section>
 <section>
   <h2>While you’re here</h2>
   <ul class="plain">
@@ -35,7 +44,16 @@
   </ul>
 </section>
 </main>
-<script>window.WG_THANKS = true;</script>
+<script>
+(function () {
+  var failed = location.search.indexOf("ok=0") > -1;
+  if (failed) {
+    document.getElementById("signup-ok").hidden = true;
+    document.getElementById("signup-failed").hidden = false;
+  }
+  window.WG_THANKS = !failed;
+})();
+</script>
 <footer>
   <div class="wrap">
     <div class="crisis">

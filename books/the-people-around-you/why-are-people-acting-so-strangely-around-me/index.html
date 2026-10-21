@@ -58,8 +58,7 @@
 <section aria-labelledby="notify-h" id="notify">
   <h2 id="notify-h">Hear when the next book is out</h2>
   <p class="sub">Five or six short emails a year at most, and a note when a new book is out. Each one is about something that tends to come up in the first two years. You can unsubscribe whenever you like.</p>
-  <form class="panel" name="notify" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="notify">
+  <form class="panel" name="notify" method="POST" action="/api/subscribe">
     <input type="hidden" name="interest" value="book-6" data-interest>
     <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <div class="form-row">
