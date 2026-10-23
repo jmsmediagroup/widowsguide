@@ -4,11 +4,19 @@
 <title>The Widow’s Guide: Book 6</title>
 <meta name="robots" content="noindex">
 <noscript><meta http-equiv="refresh" content="0; url=/books/the-people-around-you/"></noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDF55RBE1L"></script>
 <script src="/assets/books.js"></script>
 <script>
   /* Printed in the books as widowsguide.org/6. Goes to Amazon once Book 6's link
      is in /assets/books.js; until then, to the book's page on this site. */
   var b = (typeof BOOKS !== "undefined") && BOOKS[5];
-  location.replace(b && b.amazon ? b.amazon : "/books/the-people-around-you/");
+  var dest = b && b.amazon ? b.amazon : "/books/the-people-around-you/", gone = false;
+  function go() { if (!gone) { gone = true; location.replace(dest); } }
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-EDF55RBE1L', { send_page_view: false });
+  gtag('event', 'short_link_open', { link: 'book-6', transport_type: 'beacon', event_callback: go, event_timeout: 700 });
+  setTimeout(go, 900);
 </script>
 </head><body><p><a href="/books/the-people-around-you/">Continue to Book 6</a></p></body></html>

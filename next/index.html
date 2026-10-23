@@ -2,6 +2,16 @@
 <html lang="en-US"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Widow’s Guide</title><meta name="robots" content="noindex">
-<script>location.replace("/books/" + (location.hash || ""));</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDF55RBE1L"></script>
+<script>
+  var dest = "/books/" + (location.hash || ""), gone = false;
+  function go() { if (!gone) { gone = true; location.replace(dest); } }
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-EDF55RBE1L', { send_page_view: false });
+  gtag('event', 'short_link_open', { link: 'next', transport_type: 'beacon', event_callback: go, event_timeout: 700 });
+  setTimeout(go, 900);
+</script>
 <noscript><meta http-equiv="refresh" content="0; url=/books/"></noscript>
 </head><body><p><a href="/books/">The eight books</a></p></body></html>

@@ -80,6 +80,19 @@ THE EMAIL SIGN-UP (MAILERLITE)
   build_site.py and rebuild. Delete netlify.toml and netlify/ by hand.
 
 ADS AND MEASUREMENT
+  Google Analytics 4 is live (G-EDF55RBE1L, set at the top of build_site.py,
+  23 Oct 2026). It records page views plus four events:
+      sign_up              the /thanks/ page loaded after a sign-up that worked
+      checklist_download   a click on the checklist PDF
+      click_amazon         a click on any Buy link
+      short_link_open      someone opened a printed short link, /1/ to /8/ or
+                           /next/, usually by scanning a QR code in a book.
+                           The "link" parameter says which (book-1 ... book-8).
+  GA4's own "enhanced measurement" also records file_download for the PDF; the
+  site's checklist_download is the same click under its own name, so use one.
+  The short links wait for their hit to be sent (at most 0.9 s) before moving
+  on, so a blocked or slow analytics script never leaves her on a blank page.
+
   1. Create a Google Analytics 4 property and a Google Ads account.
   2. Put the IDs at the top of 09_site/build_site.py (GA4_ID, ADS_ID and the
      three conversion labels: sign-up, checklist download, click to Amazon),

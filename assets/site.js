@@ -3,7 +3,7 @@
   var books = (typeof BOOKS !== "undefined") ? BOOKS : [];
   function track(kind) {
     if (typeof gtag !== "function") return;
-    gtag("event", kind === "amazon" ? "click_amazon" : kind === "download" ? "file_download" : "sign_up");
+    gtag("event", kind === "amazon" ? "click_amazon" : kind === "download" ? "checklist_download" : "sign_up");
     var label = window.WG_LABELS && window.WG_LABELS[kind];
     if (window.WG_ADS && label) gtag("event", "conversion", { send_to: window.WG_ADS + "/" + label });
   }

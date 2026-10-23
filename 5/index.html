@@ -4,11 +4,19 @@
 <title>The Widow’s Guide: Book 5</title>
 <meta name="robots" content="noindex">
 <noscript><meta http-equiv="refresh" content="0; url=/books/the-first-year/"></noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDF55RBE1L"></script>
 <script src="/assets/books.js"></script>
 <script>
   /* Printed in the books as widowsguide.org/5. Goes to Amazon once Book 5's link
      is in /assets/books.js; until then, to the book's page on this site. */
   var b = (typeof BOOKS !== "undefined") && BOOKS[4];
-  location.replace(b && b.amazon ? b.amazon : "/books/the-first-year/");
+  var dest = b && b.amazon ? b.amazon : "/books/the-first-year/", gone = false;
+  function go() { if (!gone) { gone = true; location.replace(dest); } }
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-EDF55RBE1L', { send_page_view: false });
+  gtag('event', 'short_link_open', { link: 'book-5', transport_type: 'beacon', event_callback: go, event_timeout: 700 });
+  setTimeout(go, 900);
 </script>
 </head><body><p><a href="/books/the-first-year/">Continue to Book 5</a></p></body></html>
