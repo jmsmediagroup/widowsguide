@@ -91,6 +91,23 @@
     });
     apply();
   }
+  // Death-certificate counter: add up the lines.
+  var counter = document.getElementById("counter");
+  if (counter) {
+    var out = document.getElementById("count-out");
+    var total = function () {
+      var n = 0;
+      counter.querySelectorAll("input").forEach(function (i) { n += Math.max(0, parseInt(i.value, 10) || 0); });
+      out.textContent = n ? "Your list so far: " + n + (n === 1 ? " place" : " places") + ". A sensible first order is " + n + ", plus a few."
+                          : "Your list so far: 0 places.";
+    };
+    counter.addEventListener("click", function (ev) {
+      var b = ev.target.closest("[data-step]"); if (!b) return;
+      var i = b.parentNode.querySelector("input");
+      i.value = Math.min(20, Math.max(0, (parseInt(i.value, 10) || 0) + +b.dataset.step)); total();
+    });
+    counter.addEventListener("input", total);
+  }
   var status = document.getElementById("letter-status");
   document.querySelectorAll("[data-letter]").forEach(function (btn) {
     btn.addEventListener("click", function () {
